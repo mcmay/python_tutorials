@@ -11,7 +11,7 @@ def get_dogs_under(dog_breed: str):
     print(f"\nDogs under category '{dog_breed}':")
     for (k, v) in dog_data.items():
         if v.startswith(dog_breed):
-            print(k, ': ', v, sep="")
+            print(f"{k}: {v}")
             count += 1
 
     if count == 0:

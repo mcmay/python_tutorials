@@ -21,13 +21,13 @@ video_data = [{'title': 'Learn Python in 10 hours', 'views': 500_603, 'years': 2
                'likes': 47_667,'click-through rate': 28.0, 'duration': 20, 'average view duration': 8},
               ]
 
+views_per_year_min = 100_000  # minimum views per year
+likes_per_year_min = 2000 # minimum likes per year
+ctr_min = 30.0  # minimum click-through rate
+avg_dur_ratio_min = .25  # minimum ratio of average view duration to video duration
+
 while (search_term := input('Search videos (Enter \'q\' to quit): ')) != 'q':
     recommends = []
-    views_per_year_min = 100_000  # minimum views per year
-    likes_per_year_min = 2000 # minimum likes per year
-    ctr_min = 30.0  # minimum click-through rate
-    avg_dur_ratio_min = .25  # minimum ratio of average view duration to video duration
-
     for video in video_data:
         for (k, v) in video.items():
             if k == 'title' and v.lower().find(search_term.lower()) >= 0:
